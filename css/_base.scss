@@ -1,0 +1,39 @@
+//Variables
+$brown:#424040;
+$aqua-green:#00ffc3;
+$black:#000;
+$white:#fff;
+$gray:#333;
+$orange:#ff9900;
+
+
+//Mixin
+@mixin borderBox{
+    box-sizing: border-box;
+}
+@mixin boxShadow{
+    box-shadow: -19px -1px 22px 15px rgba(0,0,0,0.30);
+}
+@mixin titleStyle($size,$weight){
+    font-size: $size;
+    font-weight: $weight;
+    text-align: center;
+}
+@mixin tablets{
+    @media(max-width:1366px){
+        @content;
+    }
+}
+@mixin phones{
+    @media(max-width:480px){
+        @content;
+    }
+}
+//extend
+%card{
+    @include borderBox;
+    cursor:pointer;
+    text-align: center;
+    padding: 20px;
+
+}
