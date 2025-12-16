@@ -16,9 +16,14 @@ img{
     @include borderBox;
 
     .__icon{
-        width: 35px;
+        width: 50px;
         cursor: pointer;
         display: inline-block;
+
+        &.--cart{
+            margin-right: 0.5em;
+        }
+        
     }
     .__icon-img{
         width: 120%;
@@ -89,6 +94,23 @@ img{
         font-weight: 300;
         font-size: 15px;
     }
+    .__buttonAgregar{
+        width: 100%;
+        background-color: $orange;
+        border-color: $orange;
+        color: $white;
+        padding: 10px 0px;
+        font-weight: 600;
+        transition:all 0.5s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            background-color:$aqua-green;
+            border-color: $aqua-green;
+            color: $black;
+            
+        }
+
+    }
     @include tablets{
         .__item{
             cursor: default;
@@ -113,6 +135,12 @@ img{
     }
 }
 .cart{
+    &.--showCart{
+        left: 1rem;
+    }
+    &.--closeCart{
+        right: -100%;    
+    }
     width: 500px;
     background-color: $white;
     padding: 25px;
@@ -122,13 +150,27 @@ img{
     right: -100%;
     top: 100px;
     @include boxShadow;
-    .__title{
-        width: 100%;
-        @include titleStyle(20px,600);
-        padding: 25px 0;
-        @include borderBox;
+    .divClose{
+        display: flex;
+        align-items: center;
+        .--selectorClose{
+            width: 30px;
+            cursor: pointer;
+        }
+        .imgClose{
+            width: 100%;
+        }
     }
-    .__container{
+    .divTitle{
+        grid-row:2;
+        .__title{
+            width: 100%;
+            @include titleStyle(20px,600);
+            padding: 10px 0;
+            @include borderBox;
+        }
+    }
+    .__container-Product{
         border-bottom: 1px solid $gray;
         padding: 15px;
         @include borderBox;

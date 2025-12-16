@@ -8,6 +8,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .products {
@@ -25,10 +26,21 @@
   }
 }
 
-.cart .__container {
+.cart {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+.cart .__container-items {
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart .__container-items .__container-Product {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1em;
 }
 
 body {
@@ -51,9 +63,12 @@ img {
   box-sizing: border-box;
 }
 .header .__icon {
-  width: 35px;
+  width: 50px;
   cursor: pointer;
   display: inline-block;
+}
+.header .__icon.--cart {
+  margin-right: 0.5em;
 }
 .header .__icon-img {
   width: 120%;
@@ -129,6 +144,21 @@ img {
   font-weight: 300;
   font-size: 15px;
 }
+.products .__buttonAgregar {
+  width: 100%;
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  padding: 10px 0px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.products .__buttonAgregar:hover {
+  background-color: #00ffc3;
+  border-color: #00ffc3;
+  color: #000;
+}
 @media (max-width: 1366px) {
   .products .__item {
     cursor: default;
@@ -165,20 +195,40 @@ img {
   top: 100px;
   box-shadow: -19px -1px 22px 15px rgba(0, 0, 0, 0.3);
 }
-.cart .__title {
+.cart.--showCart {
+  left: 1rem;
+}
+.cart.--closeCart {
+  right: -100%;
+}
+.cart .divClose {
+  display: flex;
+  align-items: center;
+}
+.cart .divClose .--selectorClose {
+  width: 30px;
+  cursor: pointer;
+}
+.cart .divClose .imgClose {
+  width: 100%;
+}
+.cart .divTitle {
+  grid-row: 2;
+}
+.cart .divTitle .__title {
   width: 100%;
   font-size: 20px;
   font-weight: 600;
   text-align: center;
-  padding: 25px 0;
+  padding: 10px 0;
   box-sizing: border-box;
 }
-.cart .__container {
+.cart .__container-Product {
   border-bottom: 1px solid #333;
   padding: 15px;
   box-sizing: border-box;
 }
-.cart .__container .--selectorDelete {
+.cart .__container-Product .--selectorDelete {
   width: 25px;
   cursor: pointer;
 }
