@@ -14,7 +14,18 @@ img{
     padding: 20px 50px;
     background-color:$aqua-green;
     @include borderBox;
-
+    .--showLengthProducts{
+        width: 2rem;
+        padding: 1px;
+        background-color: $orange;
+        border-radius: 50%;
+        height: 2rem; 
+        .__contador{
+            color: $white;
+            font-weight: 700;
+            font-size: 1rem;
+        } 
+    }
     .__icon{
         width: 50px;
         cursor: pointer;
@@ -40,6 +51,20 @@ img{
         .__icon{
             width: 30px;
             cursor: default;
+        }
+        .--showLengthProducts{
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+    @include phones{
+        .--showLengthProducts{
+            width: 15px;
+            height: 15px;
+
+            .__contador{
+                font-size: 12px;
+            }
         }
     }
 }
@@ -193,7 +218,7 @@ img{
         top:80px;
     }
     @include phones{
-        width: 100%;
+        width: 90%;
         box-shadow: none;
         .__title{
             padding: 15px 0;
@@ -208,7 +233,7 @@ img{
             }
         }
         .__img{
-            width: 100px;
+            width: 70px;
         }
         .__delete-icon{
             width: 30px;
@@ -216,5 +241,6 @@ img{
         p{
             margin: 0;
         }
+
     }
 }
