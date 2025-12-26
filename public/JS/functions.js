@@ -16,11 +16,19 @@ iconCloseCart.addEventListener("click",() => {
     cart.classList.replace("--showCart","--closeCart");
     console.log("Ya se cerro el carrito");
 });
+//------------------------
+let listaCarrito=[]
+let id=0;
+//----Generador de ids para los articulos
+function generarIdObjeto(){
+    id++;
+    return id;
+}
+//-------------------
 //---------Clase para cada articulo-----------------------
-const listaCarrito=[]
-
 class articulo{
-    constructor(articuloHTML){
+    constructor(articuloHTML,id){
+        this.id=id;
         this.name=articuloHTML.querySelector(".__title").textContent;
         this.price=articuloHTML.querySelector(".__price").textContent;
         this.urlImagen=articuloHTML.querySelector(".__img").src;
@@ -28,11 +36,7 @@ class articulo{
     agregarACarrito(){
         listaCarrito.push(this);
         listaCarrito.forEach(function(a=this){console.dir(a)})
-        // console.log("Se añadio a carrito: "+listaCarrito);
         actualizarVista();
-    }
-    eliminarDelCarrito(){
-        
     }
 }
 //------------------------------------
@@ -44,6 +48,7 @@ const actualizarVista= () => {
     listaCarrito.forEach(producto=>{
         const nuevaFila=document.createElement("div");
         nuevaFila.classList.add("__container-Product");
+        nuevaFila.setAttribute("data-id",producto.id);
 
         const imgProducto=document.createElement("img");
         const nombreProducto=document.createElement("p");
@@ -58,11 +63,19 @@ const actualizarVista= () => {
         iconEliminar.classList.add("--selectorDelete");
         imgEliminar.src= "/img/iconoDelete.png";
         imgEliminar.classList.add("__delete-icon");
-        iconEliminar.append(imgEliminar)
+        iconEliminar.append(imgEliminar);
+
+        
+        iconEliminar.addEventListener("click",()=>{
+            elimninarDeListaCarrito(producto.id);
+            actualizarVista();
+            contarElementos()
+        })
         nuevaFila.append(imgProducto,nombreProducto,precioProducto,iconEliminar);
         carritoContenedor.append(nuevaFila);
     });   
 }//--------------------------------------------------------------
+
 //Funcion para contar los elementos del carrito
 const contarElementos =()=>{
     const contador=document.querySelector(".__contador");
@@ -82,7 +95,9 @@ iconRemoveCart.forEach(producto =>{
 document.querySelectorAll(".__buttonAgregar").forEach(buton => {
     buton.addEventListener("click",()=>{
         const producto=buton.closest(".__item");
-        const articuloSeleccionado=new articulo(producto);
+        generarIdObjeto();
+        const articuloSeleccionado=new articulo(producto,id);
+        console.log(id)
         articuloSeleccionado.agregarACarrito();
         actualizarVista();
         contarElementos();
@@ -90,3 +105,7 @@ document.querySelectorAll(".__buttonAgregar").forEach(buton => {
     });
 });
 //------------------------------------------------------
+//Prueba logica eliminar en la lista
+const elimninarDeListaCarrito=(idEliminarDeLista)=>{
+    listaCarrito=listaCarrito.filter((producto)=>idEliminarDeLista!=producto.id);
+}
