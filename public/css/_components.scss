@@ -15,11 +15,11 @@ img{
     background-color:$aqua-green;
     @include borderBox;
     .--showLengthProducts{
-        width: 2rem;
+        width: 2%;
         padding: 1px;
         background-color: $orange;
         border-radius: 50%;
-        height: 2rem; 
+        height: 3%; 
         .__contador{
             color: $white;
             font-weight: 700;
@@ -42,6 +42,18 @@ img{
     .__img{
         width: 22%;
     }
+    @include pc-medium{
+        .--showLengthProducts{
+            width: 2%;
+            height: 4%;
+        }
+    }
+    @include pc-small{
+        .--showLengthProducts{
+            width: 2%;
+            height: 3%;
+        }
+    }
     @include tablets{
         padding: 15px;
 
@@ -53,8 +65,20 @@ img{
             cursor: default;
         }
         .--showLengthProducts{
-            width: 1.3rem;
-            height: 1.3rem;
+            width: 2%;
+            height: 1.8%;
+            .__contador{
+                font-size: 1rem;
+            }
+        }
+    }
+    @include tablets-small{
+        .--showLengthProducts{
+            width: 2.3%;
+            height: 1.5%;
+            .__contador{
+                font-size: 14px;
+            }
         }
     }
     @include phones{
@@ -126,7 +150,7 @@ img{
         color: $white;
         padding: 10px 0px;
         font-weight: 600;
-        transition:all 0.5s ease-in-out;
+        transition:all 0.3s ease-in-out;
         cursor: pointer;
         &:hover{
             background-color:$aqua-green;
@@ -160,20 +184,11 @@ img{
     }
 }
 .cart{
-    &.--showCart{
-        left: 1rem;
-    }
-    &.--closeCart{
-        right: -100%;    
-    }
     width: 500px;
     background-color: $white;
     padding: 25px;
     @include borderBox;
     height: 100%;
-    position: fixed;
-    right: -100%;
-    top: 100px;
     @include boxShadow;
     .divClose{
         display: flex;
@@ -200,7 +215,7 @@ img{
         padding: 15px;
         @include borderBox;
         .--selectorDelete{
-            width: 25px;
+            width: 3em;
             cursor: pointer;   
         }
     }
@@ -244,3 +259,52 @@ img{
 
     }
 }
+.menu{
+    width: 380px;
+    padding: 25px;
+    @include borderBox;
+    max-height:80%;
+    background-color: $aqua-green;
+    box-shadow: 5px 20px 22px 1px rgba(0,0,0,0.30);
+
+    
+    ul{
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            background-color: $orange;
+        }
+    }
+
+    .divClose{
+        .--selectorClose{
+            width: 30px;
+            .imgClose{
+                width: 100%;
+            }
+        }
+    }
+    a{
+        @extend %fontMenu;
+    }
+    @include pc-medium{
+        a{
+            font-size: 1rem;
+        }
+    }
+    @include pc-small{
+        width: 340px;
+    }
+    @include tablets{
+        width: 222px;
+        padding: 0;
+    }
+    @include tablets-small{
+        width: 185px;
+        
+        a{
+            font-size:1rem;
+        }
+    }
+
+}
+

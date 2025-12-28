@@ -1,8 +1,29 @@
 const header=document.querySelector(".header");
-const iconCart=header.firstElementChild;
+const iconCart=header.lastElementChild;
+
+//-----Funcion para abrir menu lateral izquierdo-----------------
+
+const iconMenu=header.firstElementChild;
+console.log(iconMenu);
+const menu=document.querySelector(".menu");
+iconMenu.addEventListener("click",()=>{
+    menu.classList.toggle("--showMenu");
+    console.log("Ya aparecio el menu");
+
+});
+//-------------------------------
+//----------Funcion para cerrar el menu lateral izquierdo
+const iconCloseMenu=menu.querySelector(".--selectorClose");
+iconCloseMenu.addEventListener("click",()=>{
+    menu.classList.replace("--showMenu","--closeMenu");
+    menu.classList.remove("--closeMenu");
+    console.log("Ya se cerro el menu");
+});
+//---------------------
 
 const cart=document.querySelector(".cart")
 console.log(cart)
+
 //--------------Funcion para abrir el carrito---------------
 iconCart.addEventListener("click",() =>{
     cart.classList.toggle("--showCart");
@@ -14,8 +35,10 @@ const iconCloseCart=cart.querySelector(".--selectorClose");
 console.log(iconCloseCart);
 iconCloseCart.addEventListener("click",() => {
     cart.classList.replace("--showCart","--closeCart");
+    cart.classList.remove("--closeCart")
     console.log("Ya se cerro el carrito");
 });
+
 //------------------------
 let listaCarrito=[]
 let id=0;
@@ -61,7 +84,7 @@ const actualizarVista= () => {
         precioProducto.textContent=producto.price;
         precioProducto.classList.add("__price");
         iconEliminar.classList.add("--selectorDelete");
-        imgEliminar.src= "/img/iconoDelete.png";
+        imgEliminar.src= "/img/icons/iconoDelete.png";
         imgEliminar.classList.add("__delete-icon");
         iconEliminar.append(imgEliminar);
 
