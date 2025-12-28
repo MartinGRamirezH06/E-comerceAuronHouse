@@ -88,7 +88,7 @@ const actualizarVista= () => {
         imgEliminar.classList.add("__delete-icon");
         iconEliminar.append(imgEliminar);
 
-        
+        //------Este metodo elimina objetos creados en el DOM
         iconEliminar.addEventListener("click",()=>{
             elimninarDeListaCarrito(producto.id);
             actualizarVista();
@@ -105,15 +105,7 @@ const contarElementos =()=>{
     contador.textContent=listaCarrito.length;
 }
 //---------------------------------
-//-------Funcion para eliminar objeto en lista en la vista
-const iconRemoveCart=document.querySelectorAll(".--selectorDelete");
-iconRemoveCart.forEach(producto =>{
-    producto.addEventListener("click",()=>{
-        const raizProducto=producto.parentElement;
-        raizProducto.remove();
-    })
-})
-//---------------------------
+
 //--------Metodo para que funcionen los botones de agregar------------------
 document.querySelectorAll(".__buttonAgregar").forEach(buton => {
     buton.addEventListener("click",()=>{
