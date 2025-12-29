@@ -7,16 +7,16 @@ const iconMenu=header.firstElementChild;
 console.log(iconMenu);
 const menu=document.querySelector(".menu");
 iconMenu.addEventListener("click",()=>{
-    menu.classList.toggle("--showMenu");
+    menu.classList.toggle("menu--show");
     console.log("Ya aparecio el menu");
 
 });
 //-------------------------------
 //----------Funcion para cerrar el menu lateral izquierdo
-const iconCloseMenu=menu.querySelector(".--selectorClose");
+const iconCloseMenu=menu.querySelector(".menu__close-icon");
 iconCloseMenu.addEventListener("click",()=>{
-    menu.classList.replace("--showMenu","--closeMenu");
-    menu.classList.remove("--closeMenu");
+    menu.classList.replace("menu--show","menu--close");
+    menu.classList.remove("menu--close");
     console.log("Ya se cerro el menu");
 });
 //---------------------
@@ -26,16 +26,16 @@ console.log(cart)
 
 //--------------Funcion para abrir el carrito---------------
 iconCart.addEventListener("click",() =>{
-    cart.classList.toggle("--showCart");
+    cart.classList.toggle("cart--show");
     console.log("El carrito ya aparecio");
 });
 //-------------------------
 //-----------Funcion para cerrar el carrito--------------
-const iconCloseCart=cart.querySelector(".--selectorClose");
+const iconCloseCart=cart.querySelector(".cart__close-icon");
 console.log(iconCloseCart);
 iconCloseCart.addEventListener("click",() => {
-    cart.classList.replace("--showCart","--closeCart");
-    cart.classList.remove("--closeCart")
+    cart.classList.replace("cart--show","cart--close");
+    cart.classList.remove("cart--close")
     console.log("Ya se cerro el carrito");
 });
 
@@ -52,9 +52,9 @@ function generarIdObjeto(){
 class articulo{
     constructor(articuloHTML,id){
         this.id=id;
-        this.name=articuloHTML.querySelector(".__title").textContent;
-        this.price=articuloHTML.querySelector(".__price").textContent;
-        this.urlImagen=articuloHTML.querySelector(".__img").src;
+        this.name=articuloHTML.querySelector(".products__title").textContent;
+        this.price=articuloHTML.querySelector(".products__price").textContent;
+        this.urlImagen=articuloHTML.querySelector(".products__img").src;
     }
     agregarACarrito(){
         listaCarrito.push(this);
@@ -66,11 +66,11 @@ class articulo{
 
 //-----Funcion para actualizar la vista de html
 const actualizarVista= () => {
-    const carritoContenedor=document.querySelector(".__container-items");
+    const carritoContenedor=document.querySelector(".cart__container-items");
     carritoContenedor.innerHTML="";
     listaCarrito.forEach(producto=>{
         const nuevaFila=document.createElement("div");
-        nuevaFila.classList.add("__container-Product");
+        nuevaFila.classList.add("cart__container-Product");
         nuevaFila.setAttribute("data-id",producto.id);
 
         const imgProducto=document.createElement("img");
@@ -80,12 +80,13 @@ const actualizarVista= () => {
         const imgEliminar=document.createElement("img");
 
         imgProducto.src=producto.urlImagen;
+        imgProducto.classList.add("cart__product-img");
         nombreProducto.textContent=producto.name;
         precioProducto.textContent=producto.price;
-        precioProducto.classList.add("__price");
-        iconEliminar.classList.add("--selectorDelete");
+        precioProducto.classList.add("cart__product-price");
+        iconEliminar.classList.add("cart__product-Delete");
         imgEliminar.src= "/img/icons/iconoDelete.png";
-        imgEliminar.classList.add("__delete-icon");
+        imgEliminar.classList.add("cart__product-iconDelete");
         iconEliminar.append(imgEliminar);
 
         //------Este metodo elimina objetos creados en el DOM
@@ -101,15 +102,15 @@ const actualizarVista= () => {
 
 //Funcion para contar los elementos del carrito
 const contarElementos =()=>{
-    const contador=document.querySelector(".__contador");
+    const contador=document.querySelector(".header__contador");
     contador.textContent=listaCarrito.length;
 }
 //---------------------------------
 
 //--------Metodo para que funcionen los botones de agregar------------------
-document.querySelectorAll(".__buttonAgregar").forEach(buton => {
+document.querySelectorAll(".products__buttonAgregar").forEach(buton => {
     buton.addEventListener("click",()=>{
-        const producto=buton.closest(".__item");
+        const producto=buton.closest(".products__item");
         generarIdObjeto();
         const articuloSeleccionado=new articulo(producto,id);
         console.log(id)

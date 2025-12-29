@@ -14,42 +14,42 @@ img{
     padding: 20px 50px;
     background-color:$aqua-green;
     @include borderBox;
-    .--showLengthProducts{
+    .header__cart-counter{
         width: 2%;
         padding: 1px;
         background-color: $orange;
         border-radius: 50%;
         height: 3%; 
-        .__contador{
+        .header__contador{
             color: $white;
             font-weight: 700;
             font-size: 1rem;
         } 
     }
-    .__icon{
+    .header__icon{
         width: 50px;
         cursor: pointer;
         display: inline-block;
 
-        &.--cart{
+        &.header__icon--cart{
             margin-right: 0.5em;
         }
         
     }
-    .__icon-img{
+    .header__icon-img{
         width: 120%;
     }
-    .__img{
+    .header__img{
         width: 22%;
     }
     @include pc-medium{
-        .--showLengthProducts{
+        .header__cart-counter{
             width: 2%;
             height: 4%;
         }
     }
     @include pc-small{
-        .--showLengthProducts{
+        .header__cart-counter{
             width: 2%;
             height: 3%;
         }
@@ -57,36 +57,36 @@ img{
     @include tablets{
         padding: 15px;
 
-        .__img{
+        .header__img{
             width: 200px;
         }
-        .__icon{
+        .header__icon{
             width: 30px;
             cursor: default;
         }
-        .--showLengthProducts{
+        .header__cart-counter{
             width: 2%;
             height: 1.8%;
-            .__contador{
+            .header__contador{
                 font-size: 1rem;
             }
         }
     }
     @include tablets-small{
-        .--showLengthProducts{
+        .header__cart-counter{
             width: 2.3%;
             height: 1.5%;
-            .__contador{
+            .header__contador{
                 font-size: 14px;
             }
         }
     }
     @include phones{
-        .--showLengthProducts{
+        .header__cart-counter{
             width: 15px;
             height: 15px;
 
-            .__contador{
+            .header__contador{
                 font-size: 12px;
             }
         }
@@ -102,12 +102,12 @@ img{
     color: $black;
     background-position-y: 85% ;
 
-    .__title{
+    .banner__title{
         width: 100%;
         @include titleStyle(30px,600);
         margin: 10px;
     }
-    .__subtitle{
+    .banner__subtitle{
         width: 100%;
         margin: 0 auto;
         font-size: 25px;
@@ -115,11 +115,11 @@ img{
     }
     @include phones{
         padding: 30px 0;
-        .__title{
+        .banner__title{
             font-size: 18px;
             color:$orange;
         }
-        .__subtitle{
+        .banner__subtitle{
             font-size: 16px;
         }
     }
@@ -128,22 +128,22 @@ img{
     width: 60%;
     margin:0 auto;
     @include borderBox;
-    .__item{
+    .products__item{
         @extend %card;
     }
-    .__img{
+    .products__img{
         width: 200px;
         margin-bottom: 15px;
     }
-    .__title{
+    .products__title{
         @include titleStyle(17px,500);
         margin-bottom: 5px;
     }
-    .__price{
+    .products__price{
         font-weight: 300;
         font-size: 15px;
     }
-    .__buttonAgregar{
+    .products__buttonAgregar{
         width: 100%;
         background-color: $orange;
         border-color: $orange;
@@ -161,24 +161,24 @@ img{
 
     }
     @include tablets{
-        .__item{
+        .products__item{
             cursor: default;
         }
-        .__img{
+        .products__img{
             width: 150px;
         }
     }
     @include phones{
         padding: 10px;
-        .__item{
+        .products__item{
             cursor: default;
         }
-        .__img{
+        .products__img{
             width: 100%;
             max-width: 200px;
             margin-bottom: 10px;
         }
-        .___title,.__price{
+        .products___title,.products__price{
             padding: 0 10px;
         }
     }
@@ -190,42 +190,42 @@ img{
     @include borderBox;
     height: 100%;
     @include boxShadow;
-    .divClose{
+    .cart__divClose{
         display: flex;
         align-items: center;
-        .--selectorClose{
+        .cart__close-icon{
             width: 30px;
             cursor: pointer;
         }
-        .imgClose{
+        .cart__img-Close{
             width: 100%;
         }
     }
-    .divTitle{
+    .cart__divTitle{
         grid-row:2;
-        .__title{
+        .cart__title{
             width: 100%;
             @include titleStyle(20px,600);
             padding: 10px 0;
             @include borderBox;
         }
     }
-    .__container-Product{
+    .cart__container-Product{
         border-bottom: 1px solid $gray;
         padding: 15px;
         @include borderBox;
-        .--selectorDelete{
-            width: 3em;
+        .cart__product-Delete{
+            width: 2em;
             cursor: pointer;   
         }
     }
-    .__img{
-        width: 60px;
+    .cart__product-img{
+        width: 70px;
     }
-    .__price{
+    .cart__product-price{
         font-weight: 500;
     }
-    .__delete-icon{
+    .cart__product-iconDelete{
         width: 100%;
     }
     @include tablets{
@@ -235,22 +235,22 @@ img{
     @include phones{
         width: 90%;
         box-shadow: none;
-        .__title{
+        .cart__title{
             padding: 15px 0;
         }
-        .__container{
+        .cart__container{
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
 
-            .--selectorDelete{
+            .cart__container-Product--selectorDelete{
                 margin: 0;
             }
         }
-        .__img{
+        .cart__product-img{
             width: 70px;
         }
-        .__delete-icon{
+        .cart__product-iconDelete{
             width: 30px;
         }
         p{
@@ -275,10 +275,10 @@ img{
         }
     }
 
-    .divClose{
-        .--selectorClose{
+    .menu__close{
+        .menu__close-icon{
             width: 30px;
-            .imgClose{
+            .menu__imgClose{
                 width: 100%;
             }
         }
