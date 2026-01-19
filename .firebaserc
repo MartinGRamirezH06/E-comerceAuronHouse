@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "e-comerce-auronhouse-reply"
-  }
+    "default": "e-comerce-auronhouse-reply",
+    "e.com.AuronHouse": "e-comerce-auronhouse-reply"
+  },
+  "targets": {},
+  "etags": {}
 }
