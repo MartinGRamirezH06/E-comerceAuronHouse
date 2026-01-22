@@ -125,3 +125,97 @@ document.querySelectorAll(".products__buttonAgregar").forEach(buton => {
 const elimninarDeListaCarrito=(idEliminarDeLista)=>{
     listaCarrito=listaCarrito.filter((producto)=>idEliminarDeLista!=producto.id);
 }
+//--------
+//jQuery sintaxis
+//$(selector).action();
+
+//DOM methods
+//Se debe emprezar con document.ready porque es el sustituto de defer en la etiqueta script
+$(document).ready(function(){
+    $(".promo").append("<span class='tag'></span>");
+    //$(".products__item").after("<em>AFTER</em>");
+    //const txtj=$(".products__title").text("Lo modifique con jQuery");
+    //console.log(txtj)
+    // const htmlj=$("h2").html();
+    // console.log(htmlj)
+
+    //$("h3").html("<i>jQuery</i>")
+    //$(".products article:nth-child(2)").children().eq(1).html("<i>MOdifique el titulo</i>");
+    //const cssj=$(".products article:nth-child(2) h3").css("font-size","200px")
+    $(".products article:nth-child(3)").addClass("promo");
+    $(".promo").append("<span class='tag'</span>");
+    $(".products article:nth-child(3)").removeClass("promo");
+    $(".products article:nth-child(3) span").remove()
+
+    const attrj=$("img").attr("src");
+    console.log(attrj);
+
+    const cart=document.querySelector(".cart")
+    console.log(cart)
+
+//--------------Funcion para abrir el carrito---------------
+
+    $("header i:last-child()").click(function(){
+        $(".cart").toggleClass("show")
+        
+    });
+    let valj=$(".inp").val();
+    $(".inp").val("Martin");
+    valj=$(".inp").val()
+
+    console.log(valj)
+
+
+    $(".mouse").mouseenter(function(){
+        $(this).css("opacity",".4");
+    });
+    $(".mouse").mouseleave(function(){
+        $(this).css("opacity","1");
+    });
+    $("input[type='text']").focus(function(){
+        $(this).addClass("new-outline");
+    })
+    $("input[type='text']").blur(function(){
+        $(this).removeClass("new-outline");
+    });
+    $(document).keyup(function(evento){
+        const classCart=$(".cart").hasClass("cart--show");
+        console.log(classCart);
+        console.log(evento);
+        const keyPressed=evento.keyCode;
+        if(classCart==true&&keyPressed===27){
+            console.log("Se preiono esq");
+            $(".cart").removeClass("cart--show")
+        }
+    });
+    $(".contact h2").click(function(){
+        $(".contact__form").show();
+        console.log("click")
+    });
+    $(".contact input:last-child()").click(function(){
+        $(".contact__form").hide();
+    });
+    $(".header__img").click(function(){
+        console.log("click")
+        $(".modal").fadeIn(1000,function(){
+            console.log("Probando funcion callback")
+        });
+    });
+    $(".modal i").click(function(){
+        $(this).parent().fadeOut("fast",function(){
+            console.log("Ya se fue");
+        });
+    });
+    $(".btnFormShow").click(function(){
+        $(".contact__form").slideDown();
+    });
+    $(".btnFormHide").click(function(){
+        $(".contact__form").slideUp()
+    });
+    $(".btnToogle").click(function(){
+        $(".contact__form").slideToggle()
+    })
+
+
+});
+

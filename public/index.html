@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-        <script src="JS/functions.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="JS/functions.js" defer></script>
     <title>Auron House</title>
 </head>
 <body>
@@ -26,13 +27,13 @@
             <p class="banner__subtitle">Nuestros productos nuevos</p>
         </section>
         <section class="products">
-            <article class="products__item">
+            <article class="products__item promo">
                 <img class="products__img" src="./img/playeras/playeraNegraPayasoCalva.png" alt="FOtoPlayeraNegraCalvaRodolfo">
                 <h3 class="products__title">Playera negra Calva Payaso</h3>
                 <p class="products__price">$200.00</p>
                 <button class="products__buttonAgregar">Agregar al carrito</button>
             </article>
-            <article class="products__item">
+            <article class="products__item promo">
                 <img class="products__img" src="./img/playeras/playeraBlancaPayasoBlanca.png" alt="fotoDePlayera">
                 <h3 class="products__title">Playera Blanca Sabrosa Payaso</h3>
                 <p class="products__price">$270.00</p>
@@ -45,7 +46,7 @@
                 <p class="products__price">$200.00</p>
                 <button class="products__buttonAgregar">Agregar al carrito</button>
             </article>
-            <article class="products__item">
+            <article class="products__item mouse">
                 <img class="products__img" src="./img/playeras/playeraBlancaRodolfoSabrosa.png" alt="fotoDePlayeraRodolfo">
                 <h3 class="products__title">Playera Blanca Sabrosa Rodolfo</h3>
                 <p class="products__price">$200.00</p>
@@ -158,6 +159,24 @@
             <ul><li><a href=" ">MIS PEDIDOS</a></li></ul>
             <ul><li><a href=" ">DEVOLUCIONES</a></li></ul>
             <ul><li><a href=" ">TERMINOS Y CONDICIONES</a></li></ul>
+        </section>
+        <section class="contact">
+            <h2>CONTACTO</h2>
+            <button class="btnFormShow">Mostrar Form</button>
+            <button class="btnToogle">Toogle Form</button>
+            <form class="contact__form">
+                <input type="text" placeholder="Nombre" value="Pedro" class="inp">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="No. de Orden">
+                <textarea cols="30" rows="10" placeholder="Comentarios"></textarea>
+                <input type="button" value="ENVIAR">
+            </form>
+            <button class="btnFormHide">Ocultar Form</button>
+        </section>
+        <section class="modal">
+            <i>X</i>
+            <h3>soy un modal</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A vel ex culpa dicta voluptates. Esse praesentium rem optio natus! Quae similique pariatur dolorum vel reiciendis illum accusantium modi, ea exercitationem.</p>
         </section>
     </main>
     <footer></footer>

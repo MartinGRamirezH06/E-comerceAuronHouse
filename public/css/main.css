@@ -127,6 +127,27 @@
   }
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact .contact__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  width: 400px;
+  max-height: 400px;
+  position: fixed;
+  right: 50%;
+  top: 10px;
+  background-color: #fff;
+  display: none;
+  text-align: justify;
+  flex-direction: column;
+}
+
 body {
   width: 100%;
   font-size: 15px;
@@ -263,6 +284,18 @@ img {
   margin: 0 auto;
   box-sizing: border-box;
 }
+.products .products__item {
+  position: relative;
+}
+.products .products__item .tag {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ff9900;
+  top: 30px;
+  right: 30px;
+}
 .products .products__img {
   width: 200px;
   margin-bottom: 15px;
@@ -291,6 +324,9 @@ img {
   background-color: #00ffc3;
   border-color: #00ffc3;
   color: #000;
+}
+.products .mouse {
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 1366px) {
   .products .products__item {
@@ -441,4 +477,93 @@ img {
   .menu a {
     font-size: 1rem;
   }
+}
+
+.contact {
+  width: 100%;
+  text-align: center;
+  background-color: #b2fdec;
+  font-size: 2rem;
+  align-items: center;
+}
+.contact .btnFormShow {
+  width: 30%;
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  padding: 10px 0px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.contact .btnFormShow:hover {
+  background-color: #00ffc3;
+  border-color: #00ffc3;
+  color: #000;
+}
+.contact .btnToogle {
+  width: 30%;
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  padding: 10px 0px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.contact .btnToogle:hover {
+  background-color: #00ffc3;
+  border-color: #00ffc3;
+  color: #000;
+}
+.contact .contact__form {
+  align-items: center;
+  gap: 2rem;
+  margin: 1em;
+}
+.contact .contact__form input {
+  width: 60%;
+  height: 3em;
+  font-size: 0.5em;
+  outline: none;
+  border: 2px solid #b2fdec;
+  transition: all 0.2s linear;
+}
+.contact .contact__form input.new-outline {
+  border: 2px solid #ff9900;
+}
+.contact .contact__form input:last-child {
+  width: 40%;
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  padding: 10px 0px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.contact .contact__form input:last-child:hover {
+  background-color: #00ffc3;
+  border-color: #00ffc3;
+  color: #000;
+}
+.contact .contact__form textarea {
+  width: 60%;
+  height: 10em;
+  font-size: 0.5em;
+}
+.contact .btnFormHide {
+  width: 30%;
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  padding: 10px 0px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.contact .btnFormHide:hover {
+  background-color: #00ffc3;
+  border-color: #00ffc3;
+  color: #000;
 }/*# sourceMappingURL=main.css.map */

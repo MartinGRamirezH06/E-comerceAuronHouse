@@ -5,6 +5,7 @@ $black:#000;
 $white:#fff;
 $gray:#333;
 $orange:#ff9900;
+$aqua-greenContact:#b2fdec;
 
 
 
@@ -20,6 +21,22 @@ $orange:#ff9900;
     font-weight: $weight;
     text-align: center;
 }
+@mixin styleButton($width){
+    width: $width;
+    background-color: $orange;
+    border-color: $orange;
+    color: $white;
+    padding: 10px 0px;
+    font-weight: 600;
+    transition:all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        background-color:$aqua-green;
+        border-color: $aqua-green;
+        color: $black;
+    }
+}
+
 @mixin pc-medium{
     @media (max-width:1630px) {
         @content;

@@ -107,3 +107,25 @@
         top: 72px;
     }
 }
+.contact{
+    display: flex;
+    flex-direction: column;
+    
+
+    .contact__form{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+.modal{
+    width: 400px;
+    max-height: 400px;
+    position: fixed;
+    right: 50%;
+    top:10px;
+    background-color: $white;
+    display: none;
+    text-align: justify;
+    flex-direction: column;
+}
